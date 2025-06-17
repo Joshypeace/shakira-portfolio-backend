@@ -7,7 +7,9 @@ require('dotenv').config();
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://shakirah-portfolio.vercel.app",
+}));
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
