@@ -47,7 +47,7 @@ app.post('/send-whatsapp', async (req, res) => {
       const text = await response.text();
       console.log('API Response:', text);
 
-      if (text.includes("Message successfully sent")) {
+      if (text.includes("Message queued")) {
         // Save to DB
         db.run(
           `INSERT INTO appointments (name, email, phone, service, date, message)
